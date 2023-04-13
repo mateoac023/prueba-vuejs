@@ -1,19 +1,15 @@
 <template>
-  <button @click="show = !show">Menú</button>
-  <transition name="fade">
-    <MenuPrueba v-if="show" />
-  </transition>
+  <div>
+    <ModalPrueba />
+  </div>
 </template>
 
 <script>
-import MenuPrueba from "./components/MenuPrueba.vue";
+import ModalPrueba from "./components/ModalPrueba.vue";
 export default {
   name: "App",
-  components: { MenuPrueba },
-  data() {
-    return {
-      show: false,
-    };
+  components: {
+    ModalPrueba,
   },
 };
 </script>
@@ -26,15 +22,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade.leave-to {
-  opacity: 0;
 }
 </style>
