@@ -11,25 +11,14 @@
     <div id="app"></div>
     <script>
         const app = Vue.createApp({
-            data () {
+            data() {
                 return {
-                    text: "Hola Vue",
+                    text: "Hello Vue!",
                 };
             },
-            template: `
-                <v-button :label="text"></v-button>
-            `
         });
 
-        app.component("v-button", {
-            props: ["label"],
-            template: `
-                <button>{{label}}</button>
-            `
-        })
-
         const vm = app.mount("#app");
-        console.log(vm.$props);
     </script>
 </body>
 </html>
