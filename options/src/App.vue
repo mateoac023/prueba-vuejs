@@ -1,6 +1,8 @@
 <template>
   <button @click="show = !show">Menú</button>
-  <MenuPrueba v-if="show" />
+  <transition name="fade">
+    <MenuPrueba v-if="show" />
+  </transition>
 </template>
 
 <script>
@@ -24,5 +26,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade.leave-to {
+  opacity: 0;
 }
 </style>
