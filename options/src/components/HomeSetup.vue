@@ -1,21 +1,25 @@
 <template>
-  <div>FullName: {{ fullname }}</div>
+  <div>FullName: {{ fullName }}</div>
 </template>
 
 <script>
-import { computed, ref } from "vue";
+import { computed, toRefs } from "vue";
 
 export default {
-  setup() {
-    const firstname = ref("Mateo");
-    const lastname = ref("Arias");
+  props: {
+    firstName: String,
+    lastName: String,
+  },
 
-    const fullname = computed(() => {
-      return `${firstname.value} ${lastname.value}`;
+  setup(props) {
+    const { firstName, lastName } = toRefs(props);
+
+    const fullName = computed(() => {
+      return `${firstName.value} ${lastName.value}`;
     });
 
     return {
-      fullname,
+      fullName,
     };
   },
 };

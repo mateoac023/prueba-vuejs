@@ -1,5 +1,5 @@
 <template>
-  <HomeSetup></HomeSetup>
+  <HomeSetup first-name="Camilo" last-name="Rendon"></HomeSetup>
 </template>
 
 <script>
