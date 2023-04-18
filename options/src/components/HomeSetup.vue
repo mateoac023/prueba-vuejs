@@ -1,5 +1,5 @@
 <template>
-  <div>{{ obj }}</div>
+  <div>{{ obj.counter }}</div>
 </template>
 
 <script>
