@@ -1,5 +1,5 @@
 <template>
-  <div>FullName: {{ fullName }}</div>
+  <div>{{ fullName }}</div>
 </template>
 
 <script>
@@ -11,11 +11,17 @@ export default {
     lastName: String,
   },
 
-  setup(props) {
+  setup(props, { expose }) {
+    console.log(context);
+
     const { firstName, lastName } = toRefs(props);
 
     const fullName = computed(() => {
       return `${firstName.value} ${lastName.value}`;
+    });
+
+    expose({
+      fullName,
     });
 
     return {
